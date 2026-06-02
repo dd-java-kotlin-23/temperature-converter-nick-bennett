@@ -22,13 +22,18 @@ public class Main {
       } else {
         String input = scanner.next();
         char modeFlag = Character.toUpperCase(input.strip().charAt(0));
-        if (modeFlag == 'C') {
-          mode = Mode.CELSIUS_TO_FAHRENHEIT;
-        } else if (modeFlag == 'F') {
-          mode = Mode.FAHRENHEIT_TO_CELSIUS;
-        } else {
-          // TODO: 6/2/26 Print error message to standard error device.
+
+        switch (modeFlag) {
+          case 'C':
+            mode = Mode.CELSIUS_TO_FAHRENHEIT;
+            break;
+          case 'F':
+            mode = Mode.FAHRENHEIT_TO_CELSIUS;
+            break;
+          default:
+            // TODO: 6/2/26 Print error message to standard error.
         }
+
       }
     }
   }
