@@ -43,8 +43,4 @@ public class Main {
     System.out.println("input = " + input + "; output = " + output);
   }
 
-  private enum Mode {
-    CELSIUS_TO_FAHRENHEIT, FAHRENHEIT_TO_CELSIUS
-  }
-
 }

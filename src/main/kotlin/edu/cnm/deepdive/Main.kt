@@ -1,0 +1,26 @@
+package edu.cnm.deepdive
+
+import java.util.*
+
+fun main() {
+    var mode = Mode.CELSIUS_TO_FAHRENHEIT
+    val converter = Converter()
+    val scanner = Scanner(System.`in`)
+    while (scanner.hasNext()) {
+        if (scanner.hasNextDouble()) {
+            handleConversion(scanner, mode, converter)
+        } else {
+
+        }
+    }
+}
+
+private fun handleConversion(scanner: Scanner, mode: Mode, converter: Converter) {
+    val input: Double = scanner.nextDouble()
+    val output: Double = if (mode == Mode.CELSIUS_TO_FAHRENHEIT) {
+        converter.convertC2F(input)
+    } else {
+        converter.convertF2C(input)
+    }
+    println("input = $input; output = $output")
+}
