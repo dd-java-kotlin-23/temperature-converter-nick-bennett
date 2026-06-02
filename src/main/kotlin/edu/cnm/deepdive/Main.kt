@@ -16,8 +16,8 @@ fun main() {
 }
 
 private fun handleConversion(scanner: Scanner, mode: Mode, converter: Converter) {
-    val input: Double = scanner.nextDouble()
-    val output: Double = if (mode == Mode.CELSIUS_TO_FAHRENHEIT) {
+    val input = scanner.nextDouble()
+    val output = if (mode == Mode.CELSIUS_TO_FAHRENHEIT) {
         converter.convertC2F(input)
     } else {
         converter.convertF2C(input)
@@ -26,8 +26,8 @@ private fun handleConversion(scanner: Scanner, mode: Mode, converter: Converter)
 }
 
 private fun handleModeChange(scanner: Scanner, mode: Mode): Mode {
-    val input: String = scanner.next()
-    val modeFlag: Char = input.trim()[0].uppercaseChar()
+    val input = scanner.next()
+    val modeFlag = input.trim()[0].uppercaseChar()
     return when (modeFlag) {
         'C' -> Mode.CELSIUS_TO_FAHRENHEIT
         'F' -> Mode.FAHRENHEIT_TO_CELSIUS

@@ -6,10 +6,10 @@ public class Main {
 
   void main(String[] args) {
     // DONE: 6/2/26 Set initial conversion mode to Celsius-to-Fahrenheit.
-    Mode mode = Mode.CELSIUS_TO_FAHRENHEIT;
-    Converter converter = new Converter();
+    var mode = Mode.CELSIUS_TO_FAHRENHEIT;
+    final var converter = new Converter();
     // DONE: 6/2/26 Start reading from standard input.
-    Scanner scanner = new Scanner(System.in);
+    final var scanner = new Scanner(System.in);
     while (scanner.hasNext()) {
       if (scanner.hasNextDouble()) {
         handleConversion(scanner, mode, converter);
@@ -20,8 +20,8 @@ public class Main {
   }
 
   private static Mode handleModeChange(Scanner scanner, Mode mode) {
-    String input = scanner.next();
-    char modeFlag = Character.toUpperCase(input.strip().charAt(0));
+    final var input = scanner.next();
+    final var modeFlag = Character.toUpperCase(input.strip().charAt(0));
     return switch (modeFlag) {
       case 'C' -> Mode.CELSIUS_TO_FAHRENHEIT;
       case 'F' -> Mode.FAHRENHEIT_TO_CELSIUS;
@@ -34,8 +34,8 @@ public class Main {
   }
 
   private static void handleConversion(Scanner scanner, Mode mode, Converter converter) {
-    double input = scanner.nextDouble();
-    double output = (mode == Mode.CELSIUS_TO_FAHRENHEIT)
+    final var input = scanner.nextDouble();
+    final var output = (mode == Mode.CELSIUS_TO_FAHRENHEIT)
         ? converter.convertC2F(input)
         : converter.convertF2C(input);
     // TODO: 6/2/26 Print conversion mode, input, output.
