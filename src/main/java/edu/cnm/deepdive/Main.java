@@ -22,7 +22,7 @@ public class Main {
   private static Mode handleModeChange(Scanner scanner, Mode mode) {
     String input = scanner.next();
     char modeFlag = Character.toUpperCase(input.strip().charAt(0));
-    mode = switch (modeFlag) {
+    return switch (modeFlag) {
       case 'C' -> Mode.CELSIUS_TO_FAHRENHEIT;
       case 'F' -> Mode.FAHRENHEIT_TO_CELSIUS;
       default -> {
@@ -31,7 +31,6 @@ public class Main {
         yield mode;
       }
     };
-    return mode;
   }
 
   private static void handleConversion(Scanner scanner, Mode mode, Converter converter) {
