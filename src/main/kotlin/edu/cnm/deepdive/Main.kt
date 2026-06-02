@@ -22,7 +22,7 @@ private fun handleConversion(scanner: Scanner, mode: Mode, converter: Converter)
     } else {
         converter.convertF2C(input)
     }
-    println("input = $input; output = $output")
+    println(buildConversionOutput(mode, input, output))
 }
 
 private fun handleModeChange(scanner: Scanner, mode: Mode): Mode {
@@ -36,4 +36,12 @@ private fun handleModeChange(scanner: Scanner, mode: Mode): Mode {
             mode
         }
     }
+}
+
+private fun buildConversionOutput(mode: Mode, input: Double, output: Double): String {
+    val format = if (mode == Mode.CELSIUS_TO_FAHRENHEIT)
+        "Celsius = %.2f; Fahrenheit = %.2f"
+    else
+        "Fahrenheit = %.2f; Celsius = %.2f"
+    return format.format(input, output)
 }
