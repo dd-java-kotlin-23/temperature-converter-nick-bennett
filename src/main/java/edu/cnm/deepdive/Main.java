@@ -14,12 +14,9 @@ public class Main {
     while (scanner.hasNext()) {
       if (scanner.hasNextDouble()) {
         double input = scanner.nextDouble();
-        double output;
-        if (mode == Mode.CELSIUS_TO_FAHRENHEIT) {
-          output = converter.convertC2F(input);
-        } else {
-          output = converter.convertF2C(input);
-        }
+        double output = (mode == Mode.CELSIUS_TO_FAHRENHEIT)
+            ? converter.convertC2F(input)
+            : converter.convertF2C(input);
         // TODO: 6/2/26 Print conversion mode, input, output.
         System.out.println("input = " + input + "; output = " + output);
       } else {
